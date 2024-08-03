@@ -32,7 +32,6 @@ dependencies:
   file_picker:
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.3.1
-  flutter_keyboard_visibility: 5.4.1
   font_awesome_flutter: 10.6.0
   fraction:
   from_css_color: 2.0.0

@@ -37,7 +37,11 @@ class _VideoEditorState extends State<VideoEditor> {
   final _exportingProgress = ValueNotifier<double>(0.0);
   final _isExporting = ValueNotifier<bool>(false);
   final double height = 60;
-  late VideoEditorController _controller;
+  VideoEditorController _controller = VideoEditorController.file(
+    File(''),
+    minDuration: const Duration(seconds: 1),
+    maxDuration: const Duration(seconds: 10),
+  );
 
   Future<File> convertFFUploadedFileToFile(
       FFUploadedFile ffUploadedFile) async {
@@ -288,7 +292,10 @@ class _VideoEditorState extends State<VideoEditor> {
             Expanded(
               child: IconButton(
                 onPressed: () => Navigator.of(context).pop(),
-                icon: const Icon(Icons.exit_to_app),
+                icon: const Icon(
+                  Icons.exit_to_app,
+                  color: Colors.white,
+                ),
                 tooltip: 'Leave editor',
               ),
             ),
@@ -297,7 +304,10 @@ class _VideoEditorState extends State<VideoEditor> {
               child: IconButton(
                 onPressed: () =>
                     _controller.rotate90Degrees(RotateDirection.left),
-                icon: const Icon(Icons.rotate_left),
+                icon: const Icon(
+                  Icons.rotate_left,
+                  color: Colors.white,
+                ),
                 tooltip: 'Rotate unclockwise',
               ),
             ),
@@ -305,7 +315,10 @@ class _VideoEditorState extends State<VideoEditor> {
               child: IconButton(
                 onPressed: () =>
                     _controller.rotate90Degrees(RotateDirection.right),
-                icon: const Icon(Icons.rotate_right),
+                icon: const Icon(
+                  Icons.rotate_right,
+                  color: Colors.white,
+                ),
                 tooltip: 'Rotate clockwise',
               ),
             ),
@@ -317,7 +330,10 @@ class _VideoEditorState extends State<VideoEditor> {
                     builder: (context) => CropPage(controller: _controller),
                   ),
                 ),
-                icon: const Icon(Icons.crop),
+                icon: const Icon(
+                  Icons.crop,
+                  color: Colors.white,
+                ),
                 tooltip: 'Open crop screen',
               ),
             ),
@@ -325,7 +341,10 @@ class _VideoEditorState extends State<VideoEditor> {
             Expanded(
               child: PopupMenuButton(
                 tooltip: 'Open export menu',
-                icon: const Icon(Icons.save),
+                icon: const Icon(
+                  Icons.save,
+                  color: Colors.white,
+                ),
                 itemBuilder: (context) => [
                   PopupMenuItem(
                     onTap: _exportCover,

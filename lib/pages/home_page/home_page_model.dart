@@ -7,6 +7,8 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
 
   FFUploadedFile? file;
 
+  bool isUploaded = false;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
